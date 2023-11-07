@@ -1,0 +1,62 @@
+.calculator {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(15, 15, 15);
+    padding: 15px;
+    border-radius: 5px;;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+        "zero3 zero3 zero3 . .";
+    row-gap: 10px;
+    column-gap: 8px;
+    user-select: none;
+}
+
+ul li:nth-child(16){
+    grid-area: zero3;
+}
+
+.result {
+    height: 40px;
+    background-color: rgb(115, 137, 126);
+    margin-bottom: 8px;
+    border-radius: 3px;
+    font-size: 40px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    text-align: right;
+    color: black;
+    box-shadow: inset -2px 2px 0 rgb(68, 77, 72), inset 2px 0 0 rgb(68, 77, 72);
+    overflow-x: auto;
+    overflow-y:hidden;
+}
+
+ul>li{
+    cursor: pointer;
+    background-color: white;
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 5px 0 grey;
+}
+
+ul li:active{
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
+
