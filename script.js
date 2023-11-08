@@ -1,9 +1,13 @@
 const btn = document.querySelectorAll("ul li");
 const display = document.querySelector(".result")
-var clear = false;
+var error = false;
 btn.forEach(function(node){
     node.addEventListener("mousedown", function(event){
         var data = node.innerHTML;
+        if(error){
+            display.innerHTML = "";
+            error = false;
+        }
         if(data == "AC"){
             display.innerHTML = "";
             return true;
@@ -11,15 +15,16 @@ btn.forEach(function(node){
             display.innerHTML = display.innerHTML.slice(0, -1);
             return true;
         }else if(data == "="){
-            display.innerHTML = eval(display.innerHTML);
-            clear = true;
+            try{
+                display.innerHTML = eval(display.innerHTML);
+            }catch(e){
+                const expression = display.innerHTML;
+                display.innerHTML = "Syntax error"
+                error = true;
+            }
             return true;
         }
-        if(!clear){
-            display.innerHTML+=data;
-            return true;
-        }
-        display.innerHTML=data;
-        clear = false;
+        display.innerHTML+=data;
+        display.scrollLeft = display.scrollWidth;
     })
 })

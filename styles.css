@@ -42,7 +42,11 @@ ul li:nth-child(16){
     color: black;
     box-shadow: inset -2px 2px 0 rgb(68, 77, 72), inset 2px 0 0 rgb(68, 77, 72);
     overflow-x: auto;
-    overflow-y:hidden;
+    overflow-y: hidden;
+}
+
+.result::-webkit-scrollbar{
+    display: none;
 }
 
 ul>li{
