@@ -16,7 +16,10 @@ btn.forEach(function(node){
             return true;
         }else if(data == "="){
             try{
-                display.innerHTML = eval(display.innerHTML);
+                let result = eval(display.innerHTML);
+                let decimalValue = result.toString().indexOf(".");
+                result = result.toString().substring(0, decimalValue+7);
+                display.innerHTML = result;
             }catch(e){
                 const expression = display.innerHTML;
                 display.innerHTML = "Syntax error"
