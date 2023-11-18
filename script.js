@@ -13,7 +13,7 @@ btn.forEach(function(node){
             display.innerHTML = "";
             return true;
         }else if(data == "DEL"){
-            if(display.innerHTML == "Infinity" || display.innerHTML = "NaN"){
+            if(display.innerHTML == "Infinity" || display.innerHTML == "NaN"){
                 display.innerHTML = "";
             }else{
                 display.innerHTML = display.innerHTML.slice(0, -1);
