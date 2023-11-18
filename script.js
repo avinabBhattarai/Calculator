@@ -18,7 +18,9 @@ btn.forEach(function(node){
             try{
                 let result = eval(display.innerHTML);
                 let decimalValue = result.toString().indexOf(".");
-                result = result.toString().substring(0, decimalValue+7);
+                if(decimalValue > 0){
+                    result = result.toString().substring(0, decimalValue+7);
+                }
                 display.innerHTML = result;
             }catch(e){
                 const expression = display.innerHTML;
