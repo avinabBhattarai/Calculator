@@ -44,6 +44,7 @@ ul li:nth-child(16){
     overflow-x: auto;
     overflow-y: hidden;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .result::-webkit-scrollbar{
